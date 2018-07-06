@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Goldlight.Contracts</PackageId>
+    <Authors>Peter OHanlon</Authors>
+    <Company>Private</Company>
+    <Description>Goldlight Contracts is a set of useful little extension methods that can be used to validate the inputs into your methods. This code is .NET Core.</Description>
+    <Copyright>Copyright (c) Peter OHanlon</Copyright>
+    <PackageProjectUrl>https://github.com/ohanlon/Goldlight.Contract</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/ohanlon/Goldlight.Contract/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/ohanlon/Goldlight.Contract</RepositoryUrl>
+    <RepositoryType>GITHUB</RepositoryType>
+    <PackageTags>Contract Validation, Core</PackageTags>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

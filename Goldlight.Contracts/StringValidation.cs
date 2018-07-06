@@ -1,4 +1,5 @@
 ﻿using System;
+using Goldlight.Contracts.Exceptions;
 
 namespace Goldlight.Contracts
 {
@@ -13,7 +14,7 @@ namespace Goldlight.Contracts
     /// </summary>
     /// <param name="value">The value to check for null.</param>
     /// <param name="name">The name of the argument.</param>
-    /// <returns>The original value is passed in, ready for assignment.</returns>
+    /// <returns>The original value that was passed in, ready for assignment.</returns>
     public static string ThrowIfNullOrWhiteSpace(this string value, string name) =>
       value.ThrowIfNullOrWhiteSpace(name, Resources.StringMustNotBeNullOrWhiteSpace);
 
@@ -24,16 +25,12 @@ namespace Goldlight.Contracts
     /// <param name="value">The value to check for null.</param>
     /// <param name="name">The name of the argument.</param>
     /// <param name="message">The custom message to be used in the exception.</param>
-    /// <returns>The original value is passed in, ready for assignment.</returns>
+    /// <returns>The original value that was passed in, ready for assignment.</returns>
     public static string ThrowIfNullOrWhiteSpace(this string value, string name, string message)
     {
-      name.ThrowIfNullOrWhiteSpace(nameof(name));
-      message.ThrowIfNullOrWhiteSpace(nameof(message));
-
-      if (string.IsNullOrWhiteSpace(value))
-      {
-        throw new ArgumentException(name, message);
-      }
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+      value.CheckForNullOrWhiteSpace(name, message);
 
       return value;
     }
@@ -43,8 +40,8 @@ namespace Goldlight.Contracts
 
     public static string ThrowIfNullOrEmpty(this string value, string name, string message)
     {
-      name.ThrowIfNullOrWhiteSpace(nameof(name));
-      message.ThrowIfNullOrWhiteSpace(nameof(message));
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
 
       if (string.IsNullOrEmpty(value))
       {
@@ -52,6 +49,62 @@ namespace Goldlight.Contracts
       }
 
       return value;
+    }
+
+    public static string ThrowIfStartsWith(this string value, string startsWith, string name) =>
+      value.ThrowIfStartsWith(startsWith, name, Resources.StringMustNotStartWith);
+
+    public static string ThrowIfStartsWith(this string value, string startsWith, string name, string message)
+    {
+      startsWith.CheckForNullOrWhiteSpace(nameof(startsWith), Resources.NullOrWhiteSpaceStartsWith);
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+
+      if (value.StartsWith(startsWith))
+      {
+        throw new InvalidTextException(name, message);
+      }
+      return value;
+    }
+
+    public static string ThrowIfEndsWith(this string value, string endsWith, string name) =>
+      value.ThrowIfEndsWith(endsWith, name, Resources.StringMustNotEndWith);
+
+    public static string ThrowIfEndsWith(this string value, string endsWith, string name, string message)
+    {
+      endsWith.CheckForNullOrWhiteSpace(nameof(endsWith), Resources.NullOrWhiteSpaceEndsWith);
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+
+      if (value.EndsWith(endsWith))
+      {
+        throw new InvalidTextException(name, message);
+      }
+      return value;
+    }
+
+    public static string ThrowIfContains(this string value, string contains, string name) =>
+      value.ThrowIfContains(contains, name, Resources.StringMustNotContain);
+
+    public static string ThrowIfContains(this string value, string contains, string name, string message)
+    {
+      contains.CheckForNullOrWhiteSpace(nameof(contains), Resources.NullOrWhiteSpaceContains);
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+
+      if (value.Contains(contains))
+      {
+        throw new InvalidTextException(name, message);
+      }
+      return value;
+    }
+
+    internal static void CheckForNullOrWhiteSpace(this string value, string name, string message)
+    {
+      if (string.IsNullOrWhiteSpace(value))
+      {
+        throw new ArgumentException(name, message);
+      }
     }
   }
 }

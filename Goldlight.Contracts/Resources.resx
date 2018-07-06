@@ -123,14 +123,41 @@
   <data name="CollectionMustNotBeEmpty" xml:space="preserve">
     <value>The collection must not be empty.</value>
   </data>
+  <data name="GuidMustBeEmpty" xml:space="preserve">
+    <value>The Guid must be empty.</value>
+  </data>
   <data name="GuidMustNotBeEmpty" xml:space="preserve">
     <value>The Guid must not be empty.</value>
+  </data>
+  <data name="NullOrWhiteSpaceContains" xml:space="preserve">
+    <value>The text for contains cannot be null or whitespace.</value>
+  </data>
+  <data name="NullOrWhiteSpaceEndsWith" xml:space="preserve">
+    <value>The ends with cannot be null or whitespace.</value>
+  </data>
+  <data name="NullOrWhiteSpaceMessage" xml:space="preserve">
+    <value>The message cannot be null or whitespace.</value>
+  </data>
+  <data name="NullOrWhiteSpaceName" xml:space="preserve">
+    <value>The name cannot be null or whitespace.</value>
+  </data>
+  <data name="NullOrWhiteSpaceStartsWith" xml:space="preserve">
+    <value>The starts with cannot be null or whitespace.</value>
   </data>
   <data name="StringMustNotBeNullOrEmpty" xml:space="preserve">
     <value>The string cannot be null or empty.</value>
   </data>
   <data name="StringMustNotBeNullOrWhiteSpace" xml:space="preserve">
     <value>The string cannot be null or a whitespace.</value>
+  </data>
+  <data name="StringMustNotContain" xml:space="preserve">
+    <value>The string must not contain this text.</value>
+  </data>
+  <data name="StringMustNotEndWith" xml:space="preserve">
+    <value>The string must not end with this text.</value>
+  </data>
+  <data name="StringMustNotStartWith" xml:space="preserve">
+    <value>The string must not start with this text.</value>
   </data>
   <data name="UnableToCast" xml:space="preserve">
     <value>The types are cannot be cast.</value>

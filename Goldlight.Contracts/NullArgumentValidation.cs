@@ -10,7 +10,7 @@ namespace Goldlight.Contracts
     /// </summary>
     /// <param name="value">The value to check for null.</param>
     /// <param name="name">The name of the argument.</param>
-    /// <returns>The original value is passed in, ready for assignment.</returns>
+    /// <returns>The original value that was passed in, ready for assignment.</returns>
     public static T ThrowIfNull<T>(this T value, string name)
       where T : class => value.ThrowIfNull(name, Resources.ValueMustNotBeNull);
 
@@ -21,7 +21,7 @@ namespace Goldlight.Contracts
     /// <param name="value">The value to check for null.</param>
     /// <param name="name">The name of the argument.</param>
     /// <param name="message">The custom message to be used in the exception.</param>
-    /// <returns>The original value is passed in, ready for assignment.</returns>
+    /// <returns>The original value that was passed in, ready for assignment.</returns>
     public static T ThrowIfNull<T>(this T value, string name, string message)
       where T : class
     {
@@ -43,7 +43,7 @@ namespace Goldlight.Contracts
     /// </summary>
     /// <param name="value">The value to check for default.</param>
     /// <param name="name">The name of the argument.</param>
-    /// <returns>The original value is passed in, ready for assignment.</returns>
+    /// <returns>The original value that was passed in, ready for assignment.</returns>
     public static T ThrowIfDefault<T>(this T value, string name)
       where T : struct => value.ThrowIfDefault(name, Resources.ValueMustNotBeDefault);
 
@@ -54,7 +54,7 @@ namespace Goldlight.Contracts
     /// <param name="value">The value to check for default.</param>
     /// <param name="name">The name of the argument.</param>
     /// <param name="message">The custom message to be used in the exception.</param>
-    /// <returns>The original value is passed in, ready for assignment.</returns>
+    /// <returns>The original value that was passed in, ready for assignment.</returns>
     public static T ThrowIfDefault<T>(this T value, string name, string message)
       where T : struct
     {

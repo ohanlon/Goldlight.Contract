@@ -79,11 +79,65 @@ namespace Goldlight.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Guid must be empty..
+        /// </summary>
+        internal static string GuidMustBeEmpty {
+            get {
+                return ResourceManager.GetString("GuidMustBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Guid must not be empty..
         /// </summary>
         internal static string GuidMustNotBeEmpty {
             get {
                 return ResourceManager.GetString("GuidMustNotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text for contains cannot be null or whitespace..
+        /// </summary>
+        internal static string NullOrWhiteSpaceContains {
+            get {
+                return ResourceManager.GetString("NullOrWhiteSpaceContains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ends with cannot be null or whitespace..
+        /// </summary>
+        internal static string NullOrWhiteSpaceEndsWith {
+            get {
+                return ResourceManager.GetString("NullOrWhiteSpaceEndsWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The message cannot be null or whitespace..
+        /// </summary>
+        internal static string NullOrWhiteSpaceMessage {
+            get {
+                return ResourceManager.GetString("NullOrWhiteSpaceMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name cannot be null or whitespace..
+        /// </summary>
+        internal static string NullOrWhiteSpaceName {
+            get {
+                return ResourceManager.GetString("NullOrWhiteSpaceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The starts with cannot be null or whitespace..
+        /// </summary>
+        internal static string NullOrWhiteSpaceStartsWith {
+            get {
+                return ResourceManager.GetString("NullOrWhiteSpaceStartsWith", resourceCulture);
             }
         }
         
@@ -102,6 +156,33 @@ namespace Goldlight.Contracts {
         internal static string StringMustNotBeNullOrWhiteSpace {
             get {
                 return ResourceManager.GetString("StringMustNotBeNullOrWhiteSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string must not contain this text..
+        /// </summary>
+        internal static string StringMustNotContain {
+            get {
+                return ResourceManager.GetString("StringMustNotContain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string must not end with this text..
+        /// </summary>
+        internal static string StringMustNotEndWith {
+            get {
+                return ResourceManager.GetString("StringMustNotEndWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string must not start with this text..
+        /// </summary>
+        internal static string StringMustNotStartWith {
+            get {
+                return ResourceManager.GetString("StringMustNotStartWith", resourceCulture);
             }
         }
         
