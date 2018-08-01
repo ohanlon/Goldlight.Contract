@@ -13,8 +13,8 @@
     <RepositoryUrl>https://github.com/ohanlon/Goldlight.Contract</RepositoryUrl>
     <RepositoryType>GITHUB</RepositoryType>
     <PackageTags>Contract Validation, Core</PackageTags>
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Version>1.0.1.1</Version>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

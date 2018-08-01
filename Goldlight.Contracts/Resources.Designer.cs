@@ -79,6 +79,24 @@ namespace Goldlight.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The date {0} must not be earlier than {1}..
+        /// </summary>
+        internal static string DateCannotBeEarlierThan {
+            get {
+                return ResourceManager.GetString("DateCannotBeEarlierThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The date {0} must not be greater than {1}..
+        /// </summary>
+        internal static string DateCannotBeGreaterThan {
+            get {
+                return ResourceManager.GetString("DateCannotBeGreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Guid must be empty..
         /// </summary>
         internal static string GuidMustBeEmpty {
@@ -142,6 +160,24 @@ namespace Goldlight.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The string must contain..
+        /// </summary>
+        internal static string StringMustContain {
+            get {
+                return ResourceManager.GetString("StringMustContain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string must end with..
+        /// </summary>
+        internal static string StringMustEndWith {
+            get {
+                return ResourceManager.GetString("StringMustEndWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The string cannot be null or empty..
         /// </summary>
         internal static string StringMustNotBeNullOrEmpty {
@@ -183,6 +219,15 @@ namespace Goldlight.Contracts {
         internal static string StringMustNotStartWith {
             get {
                 return ResourceManager.GetString("StringMustNotStartWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string must start with this text..
+        /// </summary>
+        internal static string StringMustStartWith {
+            get {
+                return ResourceManager.GetString("StringMustStartWith", resourceCulture);
             }
         }
         

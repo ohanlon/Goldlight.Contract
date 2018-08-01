@@ -67,6 +67,53 @@ namespace Goldlight.Contracts
       return value;
     }
 
+    public static string ThrowIfDoesNotStartWith(this string value, string startsWith, string name) =>
+      value.ThrowIfDoesNotStartWith(startsWith, name, Resources.StringMustStartWith);
+
+    public static string ThrowIfDoesNotStartWith(this string value, string startsWith, string name, string message)
+    {
+      startsWith.CheckForNullOrWhiteSpace(nameof(startsWith), Resources.NullOrWhiteSpaceStartsWith);
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+
+      if (!value.StartsWith(startsWith))
+      {
+        throw new InvalidTextException(name, message);
+      }
+      return value;
+    }
+
+    public static string ThrowIfDoesNotContain(this string value, string contains, string name) =>
+      value.ThrowIfDoesNotContain(contains, name, Resources.StringMustContain);
+
+    public static string ThrowIfDoesNotContain(this string value, string contains, string name, string message)
+    {
+      contains.CheckForNullOrWhiteSpace(nameof(contains), Resources.NullOrWhiteSpaceContains);
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+
+      if (!value.Contains(contains))
+      {
+        throw new InvalidTextException(name, message);
+      }
+      return value;
+    }
+
+    public static string ThrowIfDoesNotEndWith(this string value, string contains, string name) =>
+      value.ThrowIfDoesNotEndWith(contains, name, Resources.StringMustEndWith);
+
+    public static string ThrowIfDoesNotEndWith(this string value, string contains, string name, string message)
+    {
+      contains.CheckForNullOrWhiteSpace(nameof(contains), Resources.NullOrWhiteSpaceEndsWith);
+      name.CheckForNullOrWhiteSpace(nameof(name), Resources.NullOrWhiteSpaceName);
+      message.CheckForNullOrWhiteSpace(nameof(message), Resources.NullOrWhiteSpaceMessage);
+
+      if (!value.EndsWith(contains))
+      {
+        throw new InvalidTextException(name, message);
+      }
+      return value;
+    }
     public static string ThrowIfEndsWith(this string value, string endsWith, string name) =>
       value.ThrowIfEndsWith(endsWith, name, Resources.StringMustNotEndWith);
 
